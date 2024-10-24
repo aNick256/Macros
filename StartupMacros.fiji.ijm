@@ -868,7 +868,7 @@ macro "Auto drift-correction" {
             drift_data_folder = drift_folder + File.separator + "drift_data" ;
             temp_folder = new_img_directory + File.separator + "Temp";
         } else {
-            drift_folder = img_directory + parent_folder_name + "_drift_corrected" ;
+            drift_folder = img_directory + parent_folder_name + "_drift_corrected" + File.separator;
             drift_data_folder = drift_folder + File.separator + "drift_data" ;
             temp_folder = img_directory + File.separator + "Temp";
         }
@@ -917,6 +917,8 @@ macro "Auto drift-correction" {
             if (k == 0)
                 print(" It seems these stacks are already drift-corrected.\n If you want to do drift correction anyways, you have to delete existing files in:\n " + drift_folder + "\n");
             print(k + " stacks were corrected for drifts. The drift-corrected stacks are stored at:\n" + drift_folder);
+            break;
+            return false;
         }
     }
 }
