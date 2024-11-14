@@ -864,7 +864,7 @@ macro "Auto drift-correction" {
         if (storage == "Let me select") {
             new_img_directory = getDirectory("Where do you want to store the drift corrected data");
 
-            drift_folder = new_img_directory + parent_folder_name + "_drift_corrected" ;
+            drift_folder = new_img_directory + parent_folder_name + "_drift_corrected" + File.separator ;
             drift_data_folder = drift_folder + File.separator + "drift_data" ;
             temp_folder = new_img_directory + File.separator + "Temp";
         } else {
